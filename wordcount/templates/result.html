@@ -1,17 +1,35 @@
-<h1>당신이 입력한 텍스트는 {{total}}로 구성되어 있습니다.</h1>
+<!DOCTYPE html>
+<html lang="kr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HOME</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'wordcount/hello.css' %}">
+        <script src="main.js"></script>
+    </head>
 
-<a href="{%url 'home' %}">try again</a>
-<br>
+    <body>
+        <div class="jumbotron">
+        <h1>당신이 입력한 텍스트는 {{total}}개의 단어로 구성되어 있습니다.</h1>
+        <br>
+        <a href="{%url 'home' %}">Do you wanna try again?</a>
+        <br><br>
 
-<h2>입력한 텍스트 : </h2>
-<!--입력받은 전체 텍스트-->
-{{full}}
+        <h2>입력한 텍스트 : </h2>
+        <!--입력받은 전체 텍스트-->
+        {{full}}
+
+        <br> 
+        
+        <h2>단어 카운트 : </h2>
+        <!-- '단어' - '단어가 나온 횟수' --><!-- {{dictionary}} -->
+        {%for word, howmany in dictionary%}
+        {{word}} : {{howmany}} <br>
+        {%endfor%}
+        </div>
+    </body>
+</html>
 
 
-<h2>단어 카운트 : </h2>
-<!-- '단어' - '단어가 나온 횟수' -->
-<!-- {{dictionary}} -->
-
-{%for word, howmany in dictionary%}
-{{word}} : {{howmany}} <br>
-{%endfor%}

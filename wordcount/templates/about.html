@@ -1,5 +1,21 @@
-<h1>about</h1>
+<!DOCTYPE html>
+<html lang="kr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ABOUT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'wordcount/hello.css' %}">
+        <script src="main.js"></script>
+    </head>
 
-<p>안녕하세요, 이곳은 글자를 세 주는 멋쟁이 사자처럼의 워드카운트 페이지입니다.</p>
+    <body>
+        <div class="jumbotron">
+            <h1>about</h1>
+           <p>안녕하세요, 이곳은 글자를 세 주는 박수린의 워드카운트 페이지입니다.</p>
+           <a href="{%url 'home'%}">HOME으로 돌아가기</a>
+        </div>
+    </body>
+</html>
 
-<a href="{%url 'home'%}">HOME으로 돌아가기</a>
